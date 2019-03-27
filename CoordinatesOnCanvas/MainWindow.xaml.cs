@@ -61,32 +61,6 @@ namespace CoordinatesOnCanvas
                     DrawCircle(x, y);
                 if (Shape == Type.Crosses)
                     DrawCross(x, y);
-
-                Dispatcher.Invoke(() =>
-                {
-                    //var l1 = new Line
-                    //{
-                    //    X1 = (817.0 / HDist) * (d.Longitude - 0.0005 - LEFT),
-                    //    X2 = (817.0 / HDist) * (d.Longitude + 0.0005 - LEFT),
-                    //    Y1 = (1000.0 / VDist) * (d.Latitude - 0.0005 - BOTTOM),
-                    //    Y2 = (1000.0 / VDist) * (d.Latitude + 0.0005 - BOTTOM),
-                    //    StrokeThickness = 6,
-                    //    Stroke = brushes[idx]
-                    //};
-
-                    //var l2 = new Line
-                    //{
-                    //    X1 = (817.0 / HDist) * (d.Longitude + 0.0005 - LEFT),
-                    //    X2 = (817.0 / HDist) * (d.Longitude - 0.0005 - LEFT),
-                    //    Y1 = (1000.0 / VDist) * (d.Latitude - 0.0005 - BOTTOM),
-                    //    Y2 = (1000.0 / VDist) * (d.Latitude + 0.0005 - BOTTOM),
-                    //    StrokeThickness = 6,
-                    //    Stroke = brushes[idx],
-                    //};
-
-                    //Map.Children.Add(l1);
-                    //Map.Children.Add(l2);
-                });
             });
         }
 
@@ -144,9 +118,11 @@ namespace CoordinatesOnCanvas
                     Width = 20,
                     Stroke = Brushes.Black
                 };
-
-                Canvas.SetTop(circle, y);
-                Canvas.SetLeft(circle, x);
+                // Middle point of the ellipse is not the real middlepoint
+                // but the upper left corner of the box the ellipse is in
+                // the -10 is width/2  length/2
+                Canvas.SetTop(circle, y - 10);
+                Canvas.SetLeft(circle, x - 10);
                 canvas.Children.Add(circle);
             });
         }
