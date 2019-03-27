@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KMeans", "KMeans\KMeans.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{51727F89-A50C-464E-8E9F-419191F6FB8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Networking", "Networking\Networking.csproj", "{45ED2CED-75AA-421C-A929-9B7335A6C957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{51727F89-A50C-464E-8E9F-419191F6FB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51727F89-A50C-464E-8E9F-419191F6FB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51727F89-A50C-464E-8E9F-419191F6FB8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45ED2CED-75AA-421C-A929-9B7335A6C957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45ED2CED-75AA-421C-A929-9B7335A6C957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45ED2CED-75AA-421C-A929-9B7335A6C957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45ED2CED-75AA-421C-A929-9B7335A6C957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
