@@ -9,11 +9,16 @@ Note: There are more optimal ways to do this with Entity Framework.
 1. Add the dll "SQLite.Interop.dll" to your **PROJECT**, **not** your references.
 2. Set *Copy to Output Directory* to "Copy always" for that dll
 3. Add the dll's "System.Data.SQLite.dll" and "System.Data.SQLite.Linq.dll" to your projects *References*
-
+4. Add the SQLite database file to your project
+2. Set *Copy to Output Directory* to "Copy if newer" for the database file
 ## Usage
 See the files of this project
 
 ## SQLite Infos
+
+### SQLite Commandline tool
+To access the SQLite database via commandline, download the SQLite binary from the SQLite [website](https://www.sqlite.org/download.html).
+Run *sqlite3 Example.db* to open the database.
 
 ### Datatypes
 Here are the datatypes of SQLite and the respective datatypes for C#
