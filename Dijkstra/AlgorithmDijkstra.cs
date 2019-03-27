@@ -91,16 +91,20 @@ namespace Djikstra
                 {
                     neighbors = edges
                             .Where(e => e.Left.ID == curr.Value.ID) // Where Point ID from curr = Point ID for "left" part of the edge
-                            .Select(e => new { EdgeDistance = e.Distance, Node = e.Right }) // EdgeDistance is the distance defined in the edge, Node is the right Node of the edge
+                            .Select(e => new { EdgeDistance = e.Distance, // EdgeDistance is the distance defined in the edge
+                                Node = nodes.First(n => n.Value.ID == e.Right.ID) }) // Node is the right Node of the edge
                         .Concat(edges 
                             .Where(e => e.Right.ID == curr.Value.ID) // Where Point ID from curr = Point ID for "right" part of the edge
-                            .Select(e => new { EdgeDistance = e.Distance, Node = e.Left })); // EdgeDistance is the distance defined in the edge, Node is the left Node of the edge
+                            .Select(e => new { EdgeDistance = e.Distance, // EdgeDistance is the distance defined in the edge
+                                Node = nodes.First(n => n.Value.ID == e.Left.ID) // Node is the left Node of the edge
+                            }));
                 }
                 else // Edges can only be traversed left to right
                 {
                     neighbors = edges
                         .Where(e => e.Left.ID == curr.Value.ID) // Where Point ID from curr = Point ID for "left" part of the edge
-                        .Select(e => new { EdgeDistance = e.Distance, Node = e.Right }); // EdgeDistance is the distance defined in the edge, Node is the left Node of the edge
+                        .Select(e => new { EdgeDistance = e.Distance, // EdgeDistance is the distance defined in the edge
+                            Node = nodes.First(n => n.Value.ID == e.Right.ID) }); // Node is the right Node of the edge
                 }
 
                 if(neighbors != null)
