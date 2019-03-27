@@ -13,6 +13,7 @@ namespace DatabaseORM
     public class Database : DataContext
     {
         #region Constructor
+        // To see how the connection string for SQLite is built, see DatabaseORM/Example.cs
         public Database(SQLiteConnection conn) : base(conn)
         {
         
