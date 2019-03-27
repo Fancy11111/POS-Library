@@ -17,7 +17,7 @@ namespace Networking
             string hostname = "localhost";
 
             // Server
-            new Thread(() =>
+            Task.Factory.StartNew(() =>
             {
                 TcpListener listener = new TcpListener(IPAddress.Any, port);
                 listener.Start(); // Starts server
@@ -40,10 +40,11 @@ namespace Networking
                         }
                     }).Start();
                 }
-            }).Start();
+            });
 
             // Client
-            new Thread(() => {
+            Task.Factory.StartNew(() =>
+            {
                 using (Network<Message> net = new Network<Message>(new TcpClient(hostname, port)))
                 {
                     // The data your sending
@@ -58,7 +59,7 @@ namespace Networking
 
                     // Maybe receive acknowlegdement
                 }
-            }).Start();
+            });
         }
     }
 }
