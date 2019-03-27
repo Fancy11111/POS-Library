@@ -1,0 +1,9 @@
+Variable ::= 's' | 'p' | 'q' | 'r'
+
+Symbol ::= '&' | '|' | '=' | '>'
+
+Brackets ::= '(' Expression ')'
+
+Expression ::= ('!'* (Variable | Brackets)) (Symbol Expression)?
+
+Start ::= Expression

@@ -1,0 +1,21 @@
+﻿<Window x:Class="PropositionalLogic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PropositionalLogic"
+        xmlns:KV="clr-namespace:KV;assembly=KV"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <UniformGrid DockPanel.Dock="Top" Margin="0 20 0 0">
+            <TextBlock Grid.Column="0">Eingabe:</TextBlock>
+            <TextBox x:Name="inputTextBox" Grid.Column="1"></TextBox>
+            <Button x:Name="evaluateButton" Click="evaluateButton_Click">Auswerten</Button>
+        </UniformGrid>
+        <DataGrid ItemsSource="{Binding TableEntries}" DockPanel.Dock="Top" x:Name="wahrheitstabelleDataGrid" Visibility="Hidden"></DataGrid>
+        <KV:KVDiagram x:Name="kv" VariableCount="0" VariableList="" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="507" Height="319" Visibility="Hidden">
+
+        </KV:KVDiagram>
+    </DockPanel>
+</Window>
