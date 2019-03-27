@@ -77,7 +77,7 @@ namespace Djikstra
             Initialize(values, start);
             Node curr = null;
             IEnumerable<dynamic> neighbors = null;
-            while (nodes.Count != 0)
+            while (nodes.Count(n => !n.Visited) != 0)
             {
                 curr = nodes.Where(n => !n.Visited).OrderBy(n => n.Distance).FirstOrDefault();
                 if (curr == null) // All nodes visited, end not found
@@ -130,6 +130,22 @@ namespace Djikstra
                 n = n.Prev;
             }
             return path;
+        }
+
+        public void NearestNeighbor(List<Point> values, Node start)
+        {
+            Initialize(values, start.Value);
+            List<Node> path = new List<Node>();
+            path.Add(start);
+            var curr = start;
+            while (nodes.Count(n => !n.Visited) != 0)
+            {
+                curr = nodes.Where(n => !n.Visited).OrderBy(n =>
+                    Math.Sqrt(Math.Pow((curr.Value.X - n.Value.X), 2) + Math.Pow((curr.Value.Y - n.Value.Y), 2))
+                ).First();
+
+                path.Insert(0, start);
+            }
         }
     }
 }
