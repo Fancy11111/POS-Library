@@ -25,10 +25,10 @@ namespace CoordinatesOnCanvas
         const double LATMIN = 0;
         const double LNGMAX = 100;
         const double LNGMIN = 20;
-        double LATRANGE {
-            get => LATMAX - LATMIN
-        }
-        double LNGRANGE = LNGMAX - LNGMIN;
+
+        private double LATRANGE => LATMAX - LATMIN;
+
+        private double LNGRANGE => LNGMAX - LNGMIN;
 
         // Canvas values
         const double WIDTH = 600;
