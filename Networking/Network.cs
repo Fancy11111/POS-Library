@@ -38,7 +38,7 @@ namespace Networking
         {
             try
             {
-                string line, str = "", endTag = $"<{typeof(T).Name}/>";
+                string line, str = "", endTag = $"</{typeof(T).Name}>";
 
                 while((line = Reader.ReadLine()) != endTag)
                 {
