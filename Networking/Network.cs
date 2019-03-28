@@ -56,6 +56,7 @@ namespace Networking
                 return null;
             }
         }
+        #endregion
 
         #region Send/Receive Strings
         // To just send a string without serialization
